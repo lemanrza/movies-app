@@ -16,7 +16,7 @@
 }
 
 .home,
-.favori,
+.favorites,
 .addMv {
     background: rgb(119, 251, 132);
     background: linear-gradient(90deg, rgba(119, 251, 132, 1) 0%, rgba(125, 185, 226, 1) 41%, rgba(168, 233, 148, 1) 100%);

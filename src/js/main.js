@@ -36,24 +36,32 @@ function showMovie(movieArray) {
             }
         })
     })
-    const favBtns = document.querySelectorAll(".fav")
-    favBtns.forEach((favBtn) => {
-        favBtn.addEventListener("click", function () {
-            this.classList.toggle("favorited")
-            if (favBtn.classList.contains("favorited")) {
-                Swal.fire({
-                    title: "Movie added to favorites",
-                    icon: "success"
-                });
-            }
-            else {
-                Swal.fire({
-                    title: "Movie removed from favorites",
-                    icon: "error"
-                });
-            }
-        })
-    })
+const favBtns = document.querySelectorAll(".fav");
+favBtns.forEach((favBtn) => {
+    favBtn.addEventListener("click", function () {
+        const movieId = this.getAttribute("data-id");
+        let favorites = JSON.parse(localStorage.getItem("favorites"));
+        
+        if (this.classList.contains("favorited")) {
+            favorites = favorites.filter(movie => movie.id !== movieId);
+            this.classList.remove("favorited");
+            Swal.fire({
+                title: "Movie removed from favorites",
+                icon: "error"
+            });
+        } else {
+            const movie = movies.find(movie => movie.id === movieId);
+            favorites.push(movie);
+            this.classList.add("favorited");
+            Swal.fire({
+                title: "Movie added to favorites",
+                icon: "success"
+            });
+        }
+        localStorage.setItem("favorites", JSON.stringify(favorites));
+    });
+});
+
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -71,7 +79,7 @@ document.addEventListener("DOMContentLoaded", function () {
 searchInputValue.addEventListener("keyup", function filterByTitle() {
     const searchQuery = searchInputValue.value.toLowerCase().trim();
     const filteredMovies = movies.filter(movie => movie.title.trim().toLowerCase().includes(searchQuery))
-    showMovie(filteredMovies)
+    showMovie(filteredMovies)    
 })
 
 sortSelect.addEventListener("change", function () {
