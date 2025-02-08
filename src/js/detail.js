@@ -23,6 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 detailCreatedAt.textContent=moment(movie.createdAt).format('MMMM Do YYYY, h:mm:ss a');
                 detailIframe.src = movie.trailerUrl
             }
-        }))
+        })).catch(error => console.error("API error:", error))
 })
 

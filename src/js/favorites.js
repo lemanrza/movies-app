@@ -8,6 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
         .then((data) => {
             movies = data
            
-        })
+        }).catch(error => console.error("API error:", error))
 })
 

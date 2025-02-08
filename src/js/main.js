@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("movies", JSON.stringify(movies))
             showMovie(movies)
 
-        })
+        }).catch(error => console.error("API error:", error))
 })
 
 searchInputValue.addEventListener("keyup", function filterByTitle() {

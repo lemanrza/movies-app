@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
             movieDescriptionInput.value = movie.description;
             movieRateInput.value = movie.imdbRate;
             movieTrailerInput.value = movie.trailerUrl;
-        })
+        }).catch(error => console.error("API error:", error))
 })
 
 saveBtn.addEventListener("click", function (e) {
@@ -50,7 +50,7 @@ saveBtn.addEventListener("click", function (e) {
     }).then(resp => resp.json())
         .then((updatedMovie) => {
             window.location.href = "index.html"
-        })
+        }).catch(error => console.error("API error:", error))
 })
 
 
