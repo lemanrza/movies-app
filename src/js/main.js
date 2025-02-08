@@ -1,7 +1,7 @@
 const moviesList = document.querySelector(".movies")
 const searchInputValue = document.querySelector(".searchValue")
 const sortSelect = document.querySelector("select");
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = "https://679fb38b24322f8329c46bf0.mockapi.io/api/movies/movie"
 let movies = []
 
 function showMovie(movieArray) {
