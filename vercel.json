@@ -1,0 +1,24 @@
+{
+    "rewrites": [
+        {
+            "source": "/addMv",
+            "destination": "/addMv.html"
+        },
+        {
+            "source": "/edit",
+            "destination": "/edit.html"
+        },
+        {
+            "source": "/favorites",
+            "destination": "/favorites.html"
+        },
+        {
+            "source": "/detail",
+            "destination": "/detail.html"
+        },
+        {
+            "source": "/",
+            "destination": "/index.html"
+        }
+    ]
+}
