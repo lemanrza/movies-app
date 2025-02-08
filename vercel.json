@@ -1,6 +1,10 @@
 {
     "rewrites": [
         {
+            "source": "/api/:path*",
+            "destination": "https://679fb38b24322f8329c46bf0.mockapi.io/api/movies/:path*"
+        },
+        {
             "source": "/addMv",
             "destination": "/addMv.html"
         },

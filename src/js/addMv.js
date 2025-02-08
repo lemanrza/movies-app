@@ -6,7 +6,7 @@ const movieDescriptionInput = document.querySelector("#description")
 const movieRateInput = document.querySelector("#rate")
 const movieTrailerInput = document.querySelector("#trailer")
 const addBtn = document.querySelector("#addition")
-const API_URL = "https://679fb38b24322f8329c46bf0.mockapi.io/api/movies/movie"
+const API_URL = import.meta.env.VITE_API_URL;
 
 function showNewMovie(newMv) {
     moviesList.innerHTML += ` <div class="col">

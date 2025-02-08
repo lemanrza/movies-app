@@ -1,5 +1,5 @@
 const id = new URLSearchParams(window.location.search).get("id")
-const API_URL = "https://679fb38b24322f8329c46bf0.mockapi.io/api/movies/movie"
+const API_URL = import.meta.env.VITE_API_URL;
 const detailPoster = document.querySelector(".detailPoster");
 const detailTitle = document.querySelector(".detailTitle")
 const detailGenre = document.querySelector(".genreInfo")
